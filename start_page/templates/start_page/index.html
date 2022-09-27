@@ -9,11 +9,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>
-{#Footer#}
-<nav class="navbar navbar-expand-lg bg-light">
+<body style='background-image: url(static/img/bacgroundsportstat.jpg)'>
+{#Heder#}
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <a class="navbar-brand" href="#">Статистика тренера</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,49 +21,58 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Войти</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Зарегестрироваться</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
+            Опции
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Статистика</a></li>
+            <li><a class="dropdown-item" href="#">Группа</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Тренировка</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Link</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
 {#Logo#}
-<div class="card" style="width: 50rem;">
-  <img src="static/img/sportchas.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Становись сегодня лучше чем был вчера!</p>
+  <div class="container-sm text-center mt-5">
+    <div class="row">
+      <div class="col align-self-center">
+        <div class="card rounded text-center" style="width: auto;">
+            <img src="static/img/sportchas.jpg" class="card-img-top " alt="...">
+            <div class="card-body">
+              <figure class="text-center">
+                <blockquote class="blockquote">
+                  <p>Становись сегодня лучше чем был вчера!!!</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  Твой тренер 😉 <cite title="Source Title"></cite>
+                </figcaption>
+              </figure>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+
 {#Bottons#}
-{#Heder#}
-<div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">Регистрация</button>
-  <button class="btn btn-primary" type="button">Войти</button>
+<div class="d-grid gap-2 col-6 mx-auto mt-5">
+  <button class="btn btn-outline-success" type="button">Войти</button>
+  <button class="btn btn-outline-danger" type="button">Регистрация</button>
 </div>
-<nav class="navbar fixed-bottom bg-light">
+
+  {#Footer#}
+<nav class="navbar sticky-bottom bg-light mt-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Fixed bottom</a>
+    <a class="navbar-brand" href="#">© CyclicalSportsStatistics</a>
   </div>
 </nav>
 
