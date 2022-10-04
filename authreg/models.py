@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Coach(models):
+class Coach(models.Model):
     surname = models.CharField(max_length = 32)
     name = models.CharField(max_length = 32)
     patronymic = models.CharField(max_length = 32, null=True)
@@ -15,7 +15,7 @@ class Coach(models):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add = True)
 
-class Sportsmen(models):
+class Sportsmen(models.Model):
     surname = models.CharField(max_length=32)
     name = models.CharField(max_length=32)
     patronymic = models.CharField(max_length=32, null=True)
