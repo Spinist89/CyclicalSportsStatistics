@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "authreg.apps.AuthregConfig",
     "group.apps.GroupConfig",
     "training.apps.TrainingConfig",
+    "statistic.apps.StatisticConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
