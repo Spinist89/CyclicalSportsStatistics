@@ -7,4 +7,5 @@ urlpatterns = [
     path("auth/", include("authreg.urls")),
     path("group/", include("group.urls")),
     path("training/", include("training.urls")),
+    path("statistic/", include("statistic.urls")),
 ]
