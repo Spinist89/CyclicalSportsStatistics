@@ -1,5 +1,20 @@
 from django.db import models
 
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
+
+
+
+# User = get_user_model()
+
+
+class User(AbstractUser):
+    USER_TYPE_CHOICES = (
+        (1, 'sportsmen'),
+        (2, 'coach'),
+    )
+    user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default=1)
+
 
 class Coach(models.Model):
     surname = models.CharField(max_length = 32)
