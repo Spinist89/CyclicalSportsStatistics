@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "start_page.apps.StartPageConfig",
-    "users.apps.UsersConfig",
     "group.apps.GroupConfig",
     "training.apps.TrainingConfig",
     "core.apps.CoreConfig",
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+AUTH_USER_MODEL = 'users.User'
