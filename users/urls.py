@@ -13,6 +13,7 @@ from django.contrib.auth.views import (
 from users import views
 from users.views import login
 
+app_name = 'users'
 
 urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
