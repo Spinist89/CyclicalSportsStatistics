@@ -6,28 +6,52 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">Войти</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'users:signup' %}">Зарегестрироваться</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Опции
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Статистика</a></li>
-            <li><a class="dropdown-item" href="#">Группа</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Тренировка</a></li>
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            {% if not user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">Войти</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'users:signup' %}">Зарегестрироваться</a>
+                </li>
+            {% endif %}
+            {% if user.is_authenticated %}
+                {% if user.user_type == 1 %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'statistic:sportsmen_statistic' %}">Статистика</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'statistic:coach_statistic' %}">Статистика</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="{% url 'group:create_group' %}">Создать группу</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'group:group' %}">Группа</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="{% url 'training:create_training' %}">Создать тренировку</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'training:training' %}">Тренировка</a>
+                </li>
+                {% endif %}
+
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">{{ user.username }}</a>
-        </li>
-      </ul>
+
+                <li class="nav-item">
+                  <style>
+                    li{ list-style-type: none}
+                  </style>
+                    <a class="nav-link active text-end" aria-current="page" href="{% url 'users:login' %}">{{ user.username }}</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
+                </li>
+            {% endif %}
     </div>
   </div>
 </nav>
+

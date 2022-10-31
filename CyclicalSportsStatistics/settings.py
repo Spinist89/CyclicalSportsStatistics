@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "start_page.apps.StartPageConfig",
     "group.apps.GroupConfig",
     "training.apps.TrainingConfig",
+    "statistic.apps.StatisticConfig",
     "core.apps.CoreConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -139,3 +140,5 @@ AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = 'users:login'
 
 LOGIN_REDIRECT_URL = "start_page:index"
+
+LOGOUT_REDIRECT_URL = "start_page:index"
