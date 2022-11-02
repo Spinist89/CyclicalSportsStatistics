@@ -4,7 +4,7 @@
 {% block content %}
 {#Logo#}
   <div class="container text-center">
-    <div class="mt-5 shadow p-3 mb-5 px-4 bg-white rounded justify-content-center">
+    <div class="mt-1 shadow p-3 mb-4 px-4 bg-white rounded justify-content-center">
       <div class="row">
         <div class="col">
           <div class="card rounded text-center" style="width: auto">
@@ -26,8 +26,9 @@
   </div>
 
 {#Bottons#}
+  {% if not user.is_authenticated %}
 <form action="{% url 'users:login' %}">
-  <div class="d-grid gap-2 col-6 mx-auto mt-5 mb-2">
+  <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-2">
     <button class="btn btn-outline-primary shadow" type="submit">Войти</button>
   </div>
 </form>
@@ -37,4 +38,5 @@
     <button class="btn btn-outline-danger shadow" type="submit">Регистрация</button>
   </div>
 </form>
+  {% endif %}
 {% endblock %}
