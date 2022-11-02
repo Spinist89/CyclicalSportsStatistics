@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'start_page:index' %}">Статистика тренера</a>
+    <a class="navbar-brand" href="{% url 'start_page:index' %}">Главная</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                   <style>
                     li{ list-style-type: none}
                   </style>
-                    <a class="nav-link active text-end" aria-current="page" href="{% url 'users:login' %}">{{ user.username }}</a>
+                    <span class="nav-link active text-end" aria-current="page">{{ user.username }}</span>
                 </li>
                 <li class="nav-item px-4">
                     <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
