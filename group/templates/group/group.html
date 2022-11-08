@@ -3,4 +3,23 @@
 
 {% block content %}
 <h1>Страница просмотра и редактирования группы</h1>
+
+{% for group in groups %}
+  <p><h3>Название группы:</h3> <h4>{{ group.title }}</h4> </p>
+  <p><h3>Имена спортсменов:</h3> <h4>{{ group.sportsmen.all }}</h4></p>
+  <div class="d-grid gap-2 col-6 mx-auto mt-5">
+    <button class="btn btn-outline-primary shadow" type="submit">Редактировать группу</button>
+  </div>
+  <hr>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
