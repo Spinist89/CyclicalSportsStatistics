@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Group
+from users.models import Group
 
 
 class GroupForm(forms.ModelForm):
@@ -8,11 +8,7 @@ class GroupForm(forms.ModelForm):
         model = Group
         fields = (
             "title",
-            "sportsmen",
         )
         labels = {
             "title": "Название группы:",
-            "sportsmen": "Юнный поддаван:",
         }
-
-
